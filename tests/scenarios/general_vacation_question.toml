@@ -1,0 +1,6 @@
+# Слишком общий вопрос -> уточнение.
+employee_id = "1655480"
+
+[[steps]]
+user = "отпуск"
+expect = { kind = "question" }

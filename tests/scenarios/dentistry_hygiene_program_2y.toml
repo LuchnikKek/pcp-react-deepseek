@@ -1,0 +1,10 @@
+# Строка 48, ветка «Стоматология от Сбера»: стаж 1655480 — 4 года (lengthOfServiceYears), доступна гигиена.
+employee_id = "1655480"
+
+[[steps]]
+user = "входит ли гигиена в стоматологию по ДМС?"
+expect = { kind = "question", options_count = 2 }
+
+[[steps]]
+user = "Стоматология от Сбера"
+expect = { kind = "answer", tools_called = ["employee"], text_contains = ["профессиональная гигиена полости рта раз в год"] }

@@ -1,0 +1,10 @@
+# Строка 63: город 1655480 — Москва -> вопрос про запись с выбором даты; ответ «да» -> ветка MedSwiss.
+employee_id = "1655480"
+
+[[steps]]
+user = "Когда придёт уведомление о записи на скрининг?"
+expect = { kind = "question", tools_called = ["employee"] }
+
+[[steps]]
+user = "Да, я записался в клинику на конкретную дату и время"
+expect = { kind = "answer", text_contains = ["MedSwiss"] }

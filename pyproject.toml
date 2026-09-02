@@ -7,6 +7,8 @@ dependencies = [
     "langchain>=1.0",
     "langgraph>=1.0",
     "fastmcp>=2.10,<4",
+    "langchain-deepseek>=1.1.0",
+    "openpyxl>=3.1.5",
 ]
 
 [dependency-groups]
@@ -22,6 +24,8 @@ packages = ["hr_agent", "mock_mcp_server"]
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+addopts = "-m 'not llm'"  # сценарии с DeepSeek: uv run pytest -m llm
+markers = ["llm: сценарные тесты с реальным DeepSeek (нужен DEEPSEEK_API_KEY)"]
 
 [tool.ruff]
 line-length = 120

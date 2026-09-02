@@ -1,0 +1,10 @@
+# Строка 238: грейд 1655480 — 15 (ниже 17). Второй шаг — уточнение по активной инструкции без нового поиска.
+employee_id = "1655480"
+
+[[steps]]
+user = "Как оформить отсутствие по случаю бракосочетания?"
+expect = { kind = "answer", tools_called = ["employee"], text_contains = ["непосредственный руководитель", "hr.sberbank.ru/platform/absences/main"] }
+
+[[steps]]
+user = "А если мне нужно больше 5 рабочих дней?"
+expect = { kind = "answer", tools_not_called = ["search_instructions"], text_contains = ["Председателя Территориального Банка"] }

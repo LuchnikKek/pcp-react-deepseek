@@ -36,5 +36,9 @@ async def get_instruction(runtime: Runtime, id: int) -> str | Command:  # noqa: 
     instruction = await runtime.context.kb.get(id)
     if instruction is None or instruction.status == STATUS_FALSE:
         return to_json({"error": f"инструкция {id} не найдена"})
-    update = {"active_instruction_id": id, "seen_instruction_ids": [id]}
+    update = {
+        "active_instruction_id": id,
+        "active_instruction_question": instruction.question,
+        "seen_instruction_ids": [id],
+    }
     return reply(runtime, instruction.model_dump(exclude={"status"}), update)
